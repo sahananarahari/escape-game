@@ -10,6 +10,11 @@ create a fun escape room game for my friends to play
 - game has at least one solvable puzzle
 - game has a way to win/exit room
 
+## how it works
+This program should take the input from a users keyboard and process it to either cause the character to move or solve a puzzle. The user can interact with a puzzle and the program will determine if it is solved. If solved, the user will be taken to a new scene, telling them that they won. If not, the user will be prompted to try again, and the program will continue to read their input.
+
+![System Diagram](Flowchart.pdf)
+
 ## future plans
 - level selector/manager
 - multiple puzzles per room
