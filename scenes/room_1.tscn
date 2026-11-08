@@ -1,3 +1,22 @@
 [gd_scene format=3 uid="uid://bxmoo1t5fj7pt"]
 
+[ext_resource type="Texture2D" uid="uid://cedglt4qe2et1" path="res://assets/orange_box.png" id="1_0tsjr"]
+[ext_resource type="Script" uid="uid://6ihl1mtv0t82" path="res://scripts/character.gd" id="1_vu5en"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vu5en"]
+size = Vector2(57, 104)
+
 [node name="room1" type="Node2D" unique_id=2060643758]
+
+[node name="Character" type="CharacterBody2D" parent="." unique_id=265215325]
+position = Vector2(576, 332)
+script = ExtResource("1_vu5en")
+
+[node name="Sprite2D" type="Sprite2D" parent="Character" unique_id=724384534]
+position = Vector2(-0.9999924, 1.5258789e-05)
+scale = Vector2(0.24429224, 0.3361204)
+texture = ExtResource("1_0tsjr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" unique_id=358054858]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_vu5en")
