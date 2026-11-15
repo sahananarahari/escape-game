@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var door = get_tree().root.get_node("room1").get_node("door")
 @onready var tryagain = $tryagain
-const CORRECT_PUZZLE: Array[int] = [1, 2, 3, 4]
+const CORRECT_PUZZLE: Array[int] = [1, 3, 4, 2]
 var user_puzzle: Array[int] = []
 
 

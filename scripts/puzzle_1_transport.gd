@@ -20,4 +20,4 @@ func _on_texture_button_pressed() -> void:
 
 func _on_next_level_body_entered(body: Node2D) -> void:
 	if (body.name == "Character"):
-		get_tree().change_scene_to_file("res://scenes/you_win.tscn") # Replace with function body.
+		get_tree().change_scene_to_file("res://scenes/you_win.tscn")

@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b01jupn0h32df" path="res://scripts/puzzle_manager_puzzle1.gd" id="7_wy464"]
 [ext_resource type="Texture2D" uid="uid://dlch4x8t0he5f" path="res://assets/puzzlebg.jpg" id="8_4wlnl"]
 [ext_resource type="Texture2D" uid="uid://bmnqp70sphlav" path="res://assets/pinkbutton.png" id="9_k86bo"]
+[ext_resource type="Script" uid="uid://dp0y6o2k4ainu" path="res://scripts/puzzle_1_clue.gd" id="10_4wlnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vu5en"]
 size = Vector2(57, 104)
@@ -246,12 +247,13 @@ text = "Incorrect, try again"
 horizontal_alignment = 1
 
 [node name="puzzle1clue" type="Node2D" parent="." unique_id=762602889]
+script = ExtResource("10_4wlnl")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="puzzle1clue" unique_id=509418683]
 position = Vector2(930, 137)
 scale = Vector2(0.40137765, 0.064352706)
 
-[node name="TextureButton" type="TextureButton" parent="puzzle1clue/StaticBody2D" unique_id=1834548221]
+[node name="clue_button" type="TextureButton" parent="puzzle1clue/StaticBody2D" unique_id=1834548221]
 offset_right = 356.0
 offset_bottom = 643.0
 scale = Vector2(0.45187503, 0.6827071)
@@ -260,6 +262,26 @@ texture_normal = ExtResource("4_xhekj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle1clue/StaticBody2D" unique_id=418539232]
 position = Vector2(83.44531, 228.09082)
 shape = SubResource("RectangleShape2D_a5kwg")
+
+[node name="clue" type="Node2D" parent="puzzle1clue" unique_id=668263329]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="puzzle1clue/clue" unique_id=401531914]
+z_index = 5
+offset_left = 231.0
+offset_top = 132.0
+offset_right = 929.0
+offset_bottom = 418.0
+
+[node name="Label" type="Label" parent="puzzle1clue/clue" unique_id=1100158450]
+z_index = 5
+offset_left = 462.0
+offset_top = 199.0
+offset_right = 704.0
+offset_bottom = 345.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 106
+text = "4653"
 
 [node name="next_level" type="Area2D" parent="." unique_id=1167414492]
 script = SubResource("GDScript_wy464")
@@ -273,4 +295,5 @@ shape = SubResource("RectangleShape2D_jrn08")
 [connection signal="pressed" from="puzzle1transport/puzzleManagerPuzzle1/button3" to="puzzle1transport/puzzleManagerPuzzle1" method="_on_button_pressed" binds= [3]]
 [connection signal="pressed" from="puzzle1transport/puzzleManagerPuzzle1/button4" to="puzzle1transport/puzzleManagerPuzzle1" method="_on_button_pressed" binds= [4]]
 [connection signal="pressed" from="puzzle1transport/puzzleManagerPuzzle1/button1" to="puzzle1transport/puzzleManagerPuzzle1" method="_on_button_pressed" binds= [1]]
+[connection signal="pressed" from="puzzle1clue/StaticBody2D/clue_button" to="puzzle1clue" method="_on_clue_button_pressed"]
 [connection signal="body_entered" from="next_level" to="puzzle1transport" method="_on_next_level_body_entered"]
