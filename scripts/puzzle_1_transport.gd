@@ -1,6 +1,7 @@
 extends Node2D
 @onready var puzzle1 = $puzzleManagerPuzzle1
-
+@onready var character = get_tree().root.get_node("room1").get_node("Character")
+@onready var clue = get_tree().root.get_node("room1").get_node("puzzle1clue").get_node("clue")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +16,8 @@ func _process(delta: float) -> void:
 func _on_texture_button_pressed() -> void:
 	#get_tree().change_scene_to_file("res://scenes/puzzle_1.tscn")
 	puzzle1.visible = true
+	clue.visible = false
+	character.is_frozen = true
 	
 
 

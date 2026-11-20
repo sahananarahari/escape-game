@@ -2,8 +2,12 @@ extends CharacterBody2D
 
 @onready var character = $Sprite2D
 @export var speed = 400
+var is_frozen: bool = false
 # Called when the node enters the scene tree for the first time.
 func get_input() -> void:
+	if is_frozen:
+		return
+		
 	var inputDirection = Input.get_vector("left", "right", "up", "down")
 	velocity = inputDirection * speed
 	#this wont do anything rn but when i add a real character itll be useful sooo
