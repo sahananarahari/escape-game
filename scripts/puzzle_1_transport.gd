@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_texture_button_pressed() -> void:
-	#get_tree().change_scene_to_file("res://scenes/puzzle_1.tscn")
+	# makes sure clue is hidden and shows puzzle, freezes character in place
 	puzzle1.visible = true
 	clue.visible = false
 	character.is_frozen = true
@@ -22,5 +22,6 @@ func _on_texture_button_pressed() -> void:
 
 
 func _on_next_level_body_entered(body: Node2D) -> void:
+	# transports to win scene if the node that enters area is named "Character"
 	if (body.name == "Character"):
 		get_tree().change_scene_to_file("res://scenes/you_win.tscn")

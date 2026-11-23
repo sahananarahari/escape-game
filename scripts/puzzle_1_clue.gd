@@ -11,11 +11,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if (Input.is_action_pressed("exit")):
+		# closer clue and unfreezes character
 		clue.visible = false
 		character.is_frozen = false
 
 
 func _on_clue_button_pressed() -> void:
-	clue.visible = true # Replace with function body.
+	# makes sure puzzle is hidden and shows clue, freezes character in place
+	clue.visible = true
 	puzzle.visible = false
 	character.is_frozen = true

@@ -1,5 +1,6 @@
 extends Node2D
 
+# creates variables to access different nodes
 @onready var door = get_tree().root.get_node("room1").get_node("door")
 @onready var character = get_tree().root.get_node("room1").get_node("Character")
 @onready var tryagain = $tryagain
@@ -27,7 +28,9 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed(extra_arg_0: int) -> void:
 	tryagain.visible = false
+	# adds the button pressed to array
 	user_puzzle.append(extra_arg_0)
+	# shows number of lights based on number of buttons user has pressed
 	if (user_puzzle.size() == 1):
 		light1.visible = true
 	elif (user_puzzle.size() == 2):
@@ -37,17 +40,18 @@ func _on_button_pressed(extra_arg_0: int) -> void:
 	elif (user_puzzle.size() == 4):
 		light4.visible = true
 		
-	
+	# if user has pressed 4 buttons checks if arrays match
 	if (user_puzzle.size() == CORRECT_PUZZLE.size()):
 		check_puzzle()
 
 func check_puzzle() -> void:
 	if (user_puzzle == CORRECT_PUZZLE):
-		#get_tree().change_scene_to_file("res://scenes/room_1_dooropen.tscn")
+		# removes door, unfreezes character and hides puzzle
 		door.queue_free()
 		visible = false
 		character.is_frozen = false
 	else:
+		# reset puzzle array and hides all lights
 		user_puzzle.clear()
 		tryagain.visible = true
 		light1.visible = false
