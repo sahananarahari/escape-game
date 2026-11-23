@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cedglt4qe2et1" path="res://assets/orange_box.png" id="1_0tsjr"]
 [ext_resource type="Script" uid="uid://6ihl1mtv0t82" path="res://scripts/character.gd" id="1_vu5en"]
-[ext_resource type="Texture2D" uid="uid://cnxgvvv8j6yxl" path="res://assets/gray_background.png" id="3_8oql1"]
+[ext_resource type="Texture2D" uid="uid://basg0k74h733i" path="res://assets/background1.PNG" id="3_fa2c2"]
 [ext_resource type="Texture2D" uid="uid://cku3edy6dfo3y" path="res://assets/dark_gray_borders.png" id="4_xhekj"]
 [ext_resource type="Texture2D" uid="uid://c4owws1kmdo51" path="res://assets/brown_square_door.jpg" id="5_irjyx"]
 [ext_resource type="Script" uid="uid://d2l0yrdjj3w8h" path="res://scripts/puzzle_1_transport.gd" id="6_0akh5"]
@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cjbb8wi0dturo" path="res://assets/buttonpresssprite.png" id="9_hvue4"]
 [ext_resource type="Script" uid="uid://dp0y6o2k4ainu" path="res://scripts/puzzle_1_clue.gd" id="10_4wlnl"]
 [ext_resource type="Texture2D" uid="uid://dq2n6lrk1ywq6" path="res://assets/blue_normal.PNG" id="10_4xhvh"]
-[ext_resource type="Texture2D" uid="uid://cvugyc74yhgq" path="res://assets/red_pressed.PNG" id="10_y5mqv"]
-[ext_resource type="Texture2D" uid="uid://cgssbnsnp1vgn" path="res://assets/red_hover.png" id="11_1afn8"]
+[ext_resource type="Texture2D" uid="uid://dc3cpfwub3s2j" path="res://assets/red_pressed.PNG" id="10_y5mqv"]
 [ext_resource type="Texture2D" uid="uid://bhq6ib01num5a" path="res://assets/blue_pressed.PNG" id="12_4xhvh"]
+[ext_resource type="Texture2D" uid="uid://cfcbpamre862x" path="res://assets/red_hover.PNG" id="12_fa2c2"]
 [ext_resource type="Texture2D" uid="uid://kbfby7xdkvle" path="res://assets/blue_hover.PNG" id="12_gu0is"]
 [ext_resource type="Texture2D" uid="uid://i6rf4c6ky7nv" path="res://assets/purple_normal.PNG" id="12_ncuik"]
 [ext_resource type="Texture2D" uid="uid://bk8pnluh0bscs" path="res://assets/purple_pressed.PNG" id="13_lwgnx"]
@@ -22,27 +22,37 @@
 [ext_resource type="Texture2D" uid="uid://djddrm5vtb1a4" path="res://assets/green_normal.PNG" id="15_4oupy"]
 [ext_resource type="Texture2D" uid="uid://b5o6u7duc057r" path="res://assets/green_pressed.PNG" id="16_fa2c2"]
 [ext_resource type="Texture2D" uid="uid://ddsgg3f2t0mk4" path="res://assets/green_hover.PNG" id="17_hvue4"]
+[ext_resource type="Texture2D" uid="uid://cdma1y061lpvh" path="res://assets/clue.PNG" id="23_hvue4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vu5en"]
 size = Vector2(57, 104)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x40io"]
+radius = 64.28063
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyp1u"]
+size = Vector2(198, 55.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nphm"]
+size = Vector2(403, 178)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x40io"]
 size = Vector2(86, 726.23315)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhekj"]
-size = Vector2(86, 1273.7437)
+size = Vector2(86, 1001.98865)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irjyx"]
-size = Vector2(81.00006, 1273.7437)
+size = Vector2(81.00006, 1504.9332)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydasa"]
-size = Vector2(157, 38)
+size = Vector2(157, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nhrv"]
-size = Vector2(156, 142)
+size = Vector2(61, 191)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5kwg"]
-size = Vector2(186.89063, 476.1808)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22j8i"]
+size = Vector2(154.46797, 689.5456)
 
 [sub_resource type="GDScript" id="GDScript_wy464"]
 script/source = "extends Area2D
@@ -78,11 +88,29 @@ shape = SubResource("RectangleShape2D_vu5en")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1316038815]
 z_index = -5
-position = Vector2(576, 325.5)
-scale = Vector2(1.1503906, 0.87109375)
-texture = ExtResource("3_8oql1")
+position = Vector2(566, 316.99997)
+scale = Vector2(1.1308594, 1.0566665)
+texture = ExtResource("3_fa2c2")
 
 [node name="walls" type="Node2D" parent="." unique_id=1774950060]
+
+[node name="plant" type="StaticBody2D" parent="walls" unique_id=851877254]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/plant" unique_id=2081585912]
+position = Vector2(112, 107)
+shape = SubResource("CircleShape2D_x40io")
+
+[node name="chair" type="StaticBody2D" parent="walls" unique_id=2086266836]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/chair" unique_id=1499170711]
+position = Vector2(957, 219.25)
+shape = SubResource("RectangleShape2D_yyp1u")
+
+[node name="desk" type="StaticBody2D" parent="walls" unique_id=86839245]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/desk" unique_id=19098266]
+position = Vector2(941.5, 102)
+shape = SubResource("RectangleShape2D_4nphm")
 
 [node name="wall1" type="StaticBody2D" parent="walls" unique_id=1387820925]
 position = Vector2(-10, -12)
@@ -129,26 +157,26 @@ rotation = -4.7131557
 scale = Vector2(1, 0.4801221)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall3" unique_id=597795685]
-position = Vector2(-0.99993896, 240.12946)
+position = Vector2(-0.99993896, 376.00687)
 shape = SubResource("RectangleShape2D_xhekj")
 
 [node name="Sprite2D" type="Sprite2D" parent="walls/wall3" unique_id=1177303811]
-position = Vector2(1.8213431, 253.49889)
-scale = Vector2(0.23358208, 2.0597696)
+position = Vector2(1.8213431, 375.99725)
+scale = Vector2(0.23358208, 1.6493897)
 texture = ExtResource("4_xhekj")
 
 [node name="wall5" type="StaticBody2D" parent="walls" unique_id=1892420397]
 position = Vector2(838, -25)
-rotation = 4.712389
+rotation = -1.5707964
 scale = Vector2(1, 0.44006103)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall5" unique_id=1902571962]
-position = Vector2(2.000002, 238.60327)
+position = Vector2(2.0000038, 123.00867)
 shape = SubResource("RectangleShape2D_irjyx")
 
 [node name="Sprite2D" type="Sprite2D" parent="walls/wall5" unique_id=1619817688]
-position = Vector2(1.8213431, 253.49889)
-scale = Vector2(0.23358208, 2.0597696)
+position = Vector2(1.8213431, 119.844955)
+scale = Vector2(0.23358208, 2.5075216)
 texture = ExtResource("4_xhekj")
 
 [node name="door" type="Node2D" parent="." unique_id=1839758297]
@@ -158,11 +186,11 @@ position = Vector2(124, 100)
 position = Vector2(477, -95)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door/StaticBody2D" unique_id=1882055702]
-position = Vector2(1, 0)
+position = Vector2(-121, -3)
 shape = SubResource("RectangleShape2D_ydasa")
 
 [node name="Sprite2D" type="Sprite2D" parent="door/StaticBody2D" unique_id=1491969446]
-position = Vector2(0.5, 0)
+position = Vector2(-116, -1)
 scale = Vector2(0.6567797, 0.0823389)
 texture = ExtResource("5_irjyx")
 
@@ -172,16 +200,14 @@ script = ExtResource("6_0akh5")
 [node name="StaticBody2D" type="StaticBody2D" parent="puzzle1transport" unique_id=1878109863]
 
 [node name="puzzleInteraction" type="TextureButton" parent="puzzle1transport/StaticBody2D" unique_id=1938143438]
-offset_left = 108.0
-offset_top = 261.00003
-offset_right = 344.0
-offset_bottom = 680.0
-scale = Vector2(0.5202487, 0.269827)
-texture_normal = ExtResource("5_irjyx")
-texture_hover = ExtResource("4_xhekj")
+offset_left = 10.000008
+offset_top = 282.0
+offset_right = 345.0
+offset_bottom = 879.0
+scale = Vector2(0.20024902, 0.309827)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle1transport/StaticBody2D" unique_id=1798837436]
-position = Vector2(169, 322)
+position = Vector2(41.5, 378.5)
 shape = SubResource("RectangleShape2D_3nhrv")
 
 [node name="puzzleManagerPuzzle1" type="Node2D" parent="puzzle1transport" unique_id=1754611745]
@@ -229,6 +255,16 @@ theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 
 theme_override_font_sizes/font_size = 30
 text = "Press the Buttons in the Correct Order"
 
+[node name="exitinstructions" type="Label" parent="puzzle1transport/puzzleManagerPuzzle1" unique_id=720755685]
+z_index = 5
+offset_left = -545.0
+offset_top = -311.0
+offset_right = -311.0
+offset_bottom = -269.0
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/font_size = 30
+text = "Press esc to exit"
+
 [node name="button2" type="TextureButton" parent="puzzle1transport/puzzleManagerPuzzle1" unique_id=1948308578]
 z_index = 5
 offset_left = -150.0
@@ -238,7 +274,7 @@ offset_bottom = 2014.0
 scale = Vector2(0.07710844, 0.07710844)
 texture_normal = ExtResource("9_1afn8")
 texture_pressed = ExtResource("10_y5mqv")
-texture_hover = ExtResource("11_1afn8")
+texture_hover = ExtResource("12_fa2c2")
 
 [node name="button3" type="TextureButton" parent="puzzle1transport/puzzleManagerPuzzle1" unique_id=590607809]
 z_index = 5
@@ -293,19 +329,21 @@ position = Vector2(930, 137)
 scale = Vector2(0.40137765, 0.064352706)
 
 [node name="clue_button" type="TextureButton" parent="puzzle1clue/StaticBody2D" unique_id=1834548221]
-offset_right = 356.0
-offset_bottom = 643.0
-scale = Vector2(0.45187503, 0.6827071)
-texture_normal = ExtResource("4_xhekj")
+offset_left = -22.422775
+offset_top = -404.02344
+offset_right = 333.5772
+offset_bottom = 238.97656
+scale = Vector2(0.45239186, 1.0285358)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle1clue/StaticBody2D" unique_id=418539232]
-position = Vector2(83.44531, 228.09082)
-shape = SubResource("RectangleShape2D_a5kwg")
+position = Vector2(57.30249, -59.250732)
+shape = SubResource("RectangleShape2D_22j8i")
 
 [node name="clue" type="Node2D" parent="puzzle1clue" unique_id=668263329]
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="puzzle1clue/clue" unique_id=401531914]
+visible = false
 z_index = 5
 offset_left = 231.0
 offset_top = 132.0
@@ -313,6 +351,7 @@ offset_right = 929.0
 offset_bottom = 418.0
 
 [node name="Label" type="Label" parent="puzzle1clue/clue" unique_id=1100158450]
+visible = false
 z_index = 5
 offset_left = 462.0
 offset_top = 199.0
@@ -322,11 +361,26 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 106
 text = "4653"
 
+[node name="clue_paper" type="Sprite2D" parent="puzzle1clue/clue" unique_id=866691505]
+position = Vector2(577, 332)
+texture = ExtResource("23_hvue4")
+
+[node name="exitinstructions" type="Label" parent="puzzle1clue/clue" unique_id=160589924]
+z_index = 5
+offset_left = 28.0
+offset_top = 18.0
+offset_right = 262.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/font_size = 30
+text = "Press esc to exit"
+
 [node name="next_level" type="Area2D" parent="." unique_id=1167414492]
+position = Vector2(938, 104)
 script = SubResource("GDScript_wy464")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="next_level" unique_id=549733317]
-position = Vector2(599.5, -52)
+position = Vector2(-456, -157)
 shape = SubResource("RectangleShape2D_jrn08")
 
 [connection signal="pressed" from="puzzle1transport/StaticBody2D/puzzleInteraction" to="puzzle1transport" method="_on_texture_button_pressed"]
