@@ -2,7 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://drh7ckrnkn7iv" path="res://assets/levelselect_bg.PNG" id="1_5eglo"]
 [ext_resource type="Texture2D" uid="uid://c08pthdtp6sux" path="res://assets/levelselect_text.PNG" id="2_lbe5n"]
+[ext_resource type="Script" uid="uid://dd51r6ychkkiq" path="res://scripts/level_transport.gd" id="3_2yrkd"]
 [ext_resource type="Texture2D" uid="uid://dl7ir1k5jtpid" path="res://assets/levelopen_normal.PNG" id="4_kfnik"]
+[ext_resource type="Texture2D" uid="uid://c2bgju8q7ulqt" path="res://assets/levelopen_hover.PNG" id="5_kfnik"]
+[ext_resource type="Texture2D" uid="uid://cpawtrjgevsa2" path="res://assets/levelcomplete_normal.PNG" id="6_6dptc"]
+[ext_resource type="Texture2D" uid="uid://r7rutm67urrw" path="res://assets/levelcomplete_hover.PNG" id="7_kq0y1"]
 
 [node name="level_manager" type="Node2D" unique_id=362055573]
 
@@ -19,6 +23,7 @@ scale = Vector2(1.13, 1.1016668)
 texture = ExtResource("2_lbe5n")
 
 [node name="level_buttons" type="Node2D" parent="." unique_id=1834382088]
+script = ExtResource("3_2yrkd")
 
 [node name="level_1" type="Node2D" parent="level_buttons" unique_id=1878546761]
 
@@ -29,3 +34,58 @@ offset_right = 158.0
 offset_bottom = 224.0
 scale = Vector2(1.1417083, 1.0848274)
 texture_normal = ExtResource("4_kfnik")
+texture_hover = ExtResource("5_kfnik")
+
+[node name="level_1_complete" type="Node2D" parent="level_buttons/level_1" unique_id=1063034676]
+visible = false
+
+[node name="level_1_complete" type="TextureButton" parent="level_buttons/level_1/level_1_complete" unique_id=1106411196]
+offset_left = 56.999996
+offset_top = 122.0
+offset_right = 158.0
+offset_bottom = 224.0
+scale = Vector2(1.1445192, 1.08358)
+texture_normal = ExtResource("6_6dptc")
+texture_hover = ExtResource("7_kq0y1")
+
+[node name="level_2" type="Node2D" parent="level_buttons" unique_id=990366929]
+visible = false
+
+[node name="level_2_open" type="TextureButton" parent="level_buttons/level_2" unique_id=1424062426]
+offset_left = 192.00002
+offset_top = 121.0
+offset_right = 293.0
+offset_bottom = 223.0
+scale = Vector2(1.117097, 1.116995)
+texture_normal = ExtResource("4_kfnik")
+texture_hover = ExtResource("5_kfnik")
+
+[node name="level_2_complete" type="Node2D" parent="level_buttons/level_2" unique_id=1055409569]
+visible = false
+
+[node name="level_2_complete" type="TextureButton" parent="level_buttons/level_2/level_2_complete" unique_id=680596174]
+offset_left = 191.0
+offset_top = 123.0
+offset_right = 292.0
+offset_bottom = 225.0
+scale = Vector2(1.1301321, 1.1002564)
+texture_normal = ExtResource("6_6dptc")
+texture_hover = ExtResource("7_kq0y1")
+
+[node name="level_3" type="Node2D" parent="level_buttons" unique_id=734815157]
+visible = false
+
+[node name="level_3_open" type="TextureButton" parent="level_buttons/level_3" unique_id=7117844]
+offset_left = 329.0
+offset_top = 123.0
+offset_right = 430.0
+offset_bottom = 225.0
+scale = Vector2(1.1105747, 1.0901388)
+texture_normal = ExtResource("4_kfnik")
+texture_hover = ExtResource("5_kfnik")
+
+[connection signal="pressed" from="level_buttons/level_1/level_1_open" to="level_buttons" method="_on_level_button_pressed" binds= [1]]
+[connection signal="pressed" from="level_buttons/level_1/level_1_complete/level_1_complete" to="level_buttons" method="_on_level_button_pressed" binds= [1]]
+[connection signal="pressed" from="level_buttons/level_2/level_2_open" to="level_buttons" method="_on_level_button_pressed" binds= [2]]
+[connection signal="pressed" from="level_buttons/level_2/level_2_complete/level_2_complete" to="level_buttons" method="_on_level_button_pressed" binds= [2]]
+[connection signal="pressed" from="level_buttons/level_3/level_3_open" to="level_buttons" method="_on_level_button_pressed" binds= [3]]

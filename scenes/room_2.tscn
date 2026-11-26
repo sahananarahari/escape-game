@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://chuntxkmeb5be"]
+
+[ext_resource type="Script" uid="uid://b3ggtv335culo" path="res://scripts/win_transport.gd" id="1_586c8"]
+
+[node name="room_2" type="Node2D" unique_id=98825460]
+script = ExtResource("1_586c8")
+
+[node name="Label" type="Label" parent="." unique_id=993525779]
+offset_left = 343.0
+offset_top = 224.0
+offset_right = 780.0
+offset_bottom = 383.0
+theme_override_font_sizes/font_size = 40
+text = "welcome to level 2 lol"
+
+[node name="Button" type="Button" parent="." unique_id=704096655]
+offset_left = 385.0
+offset_top = 306.0
+offset_right = 721.0
+offset_bottom = 373.0
+theme_override_font_sizes/font_size = 25
+text = "click to pass level"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
