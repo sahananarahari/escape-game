@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bg40xm505e3g3"]
+
+[ext_resource type="Texture2D" uid="uid://drh7ckrnkn7iv" path="res://assets/levelselect_bg.PNG" id="1_5eglo"]
+[ext_resource type="Texture2D" uid="uid://c08pthdtp6sux" path="res://assets/levelselect_text.PNG" id="2_lbe5n"]
+[ext_resource type="Texture2D" uid="uid://dl7ir1k5jtpid" path="res://assets/levelopen_normal.PNG" id="4_kfnik"]
+
+[node name="level_manager" type="Node2D" unique_id=362055573]
+
+[node name="background" type="Sprite2D" parent="." unique_id=61482184]
+z_index = -5
+position = Vector2(579.80005, 332.75)
+scale = Vector2(1.1273439, 1.1041667)
+texture = ExtResource("1_5eglo")
+
+[node name="text" type="Sprite2D" parent="." unique_id=391608750]
+z_index = 5
+position = Vector2(581.56, 331.50003)
+scale = Vector2(1.13, 1.1016668)
+texture = ExtResource("2_lbe5n")
+
+[node name="level_buttons" type="Node2D" parent="." unique_id=1834382088]
+
+[node name="level_1" type="Node2D" parent="level_buttons" unique_id=1878546761]
+
+[node name="level_1_open" type="TextureButton" parent="level_buttons/level_1" unique_id=808857807]
+offset_left = 57.000004
+offset_top = 122.0
+offset_right = 158.0
+offset_bottom = 224.0
+scale = Vector2(1.1417083, 1.0848274)
+texture_normal = ExtResource("4_kfnik")
