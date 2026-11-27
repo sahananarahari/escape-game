@@ -37,14 +37,13 @@ This program should take the input from a users keyboard and process it to eithe
 - find the folder you just cloned (if needed copy it into a location you can access) and open the project.godot file
 
 ## example output
-- you will start as an orange square in a room
+- you will start as a fox in a room
 - there will be a cream-colored square on a desk. If you click the square, a piece of papers with the numbers "4653" will appear. click escape to exit.
 - there will be a gray box with buttons on the left side of the screen. If you click it, a panel with instructions and buttons will appear.
 - as you press buttons, lights will appear and reset once you press 4 buttons.
 - press the buttons in the order: blue, purple, green, red
 - puzzle will disappear and door will have disappeared
 - exit the room through where the door was and you will be transported to a win screen.
-
 - if you press the buttons in any different order, the puzzle will prompt you to try again and all the lights will disappear
 
 ## demo
