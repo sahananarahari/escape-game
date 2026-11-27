@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxmoo1t5fj7pt"]
 
-[ext_resource type="Texture2D" uid="uid://cedglt4qe2et1" path="res://assets/orange_box.png" id="1_0tsjr"]
 [ext_resource type="Script" uid="uid://6ihl1mtv0t82" path="res://scripts/character.gd" id="1_vu5en"]
+[ext_resource type="Texture2D" uid="uid://bjrbuw8bg0y13" path="res://assets/Character_Sprite.png" id="2_hvue4"]
 [ext_resource type="Texture2D" uid="uid://basg0k74h733i" path="res://assets/background1.PNG" id="3_fa2c2"]
 [ext_resource type="Texture2D" uid="uid://cku3edy6dfo3y" path="res://assets/dark_gray_borders.png" id="4_xhekj"]
 [ext_resource type="Texture2D" uid="uid://c4owws1kmdo51" path="res://assets/brown_square_door.jpg" id="5_irjyx"]
@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cdma1y061lpvh" path="res://assets/clue.PNG" id="23_hvue4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vu5en"]
-size = Vector2(57, 104)
+size = Vector2(174.5, 104)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x40io"]
 radius = 64.28063
@@ -40,13 +40,13 @@ size = Vector2(403, 178)
 size = Vector2(86, 726.23315)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhekj"]
-size = Vector2(86, 1001.98865)
+size = Vector2(86, 904.07605)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irjyx"]
-size = Vector2(81.00006, 1504.9332)
+size = Vector2(81.00006, 1420.8542)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydasa"]
-size = Vector2(157, 30)
+size = Vector2(238, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nhrv"]
 size = Vector2(61, 191)
@@ -69,7 +69,7 @@ func _process(delta: float) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrn08"]
-size = Vector2(165, 51)
+size = Vector2(236, 51)
 
 [node name="room1" type="Node2D" unique_id=2060643758]
 
@@ -78,12 +78,12 @@ position = Vector2(576, 332)
 script = ExtResource("1_vu5en")
 
 [node name="Sprite2D" type="Sprite2D" parent="Character" unique_id=724384534]
-position = Vector2(-0.9999924, 1.5258789e-05)
-scale = Vector2(0.24429224, 0.3361204)
-texture = ExtResource("1_0tsjr")
+position = Vector2(-56.04075, -47.878757)
+scale = Vector2(1.0136955, 0.88645107)
+texture = ExtResource("2_hvue4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character" unique_id=358054858]
-position = Vector2(-1, 0)
+position = Vector2(-59, -40)
 shape = SubResource("RectangleShape2D_vu5en")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1316038815]
@@ -157,12 +157,12 @@ rotation = -4.7131557
 scale = Vector2(1, 0.4801221)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall3" unique_id=597795685]
-position = Vector2(-0.99993896, 376.00687)
+position = Vector2(-0.99993896, 424.9631)
 shape = SubResource("RectangleShape2D_xhekj")
 
 [node name="Sprite2D" type="Sprite2D" parent="walls/wall3" unique_id=1177303811]
-position = Vector2(1.8213431, 375.99725)
-scale = Vector2(0.23358208, 1.6493897)
+position = Vector2(1.8213431, 424.88712)
+scale = Vector2(0.23358208, 1.4856046)
 texture = ExtResource("4_xhekj")
 
 [node name="wall5" type="StaticBody2D" parent="walls" unique_id=1892420397]
@@ -171,12 +171,12 @@ rotation = -1.5707964
 scale = Vector2(1, 0.44006103)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall5" unique_id=1902571962]
-position = Vector2(2.0000038, 123.00867)
+position = Vector2(2.0000057, 165.04834)
 shape = SubResource("RectangleShape2D_irjyx")
 
 [node name="Sprite2D" type="Sprite2D" parent="walls/wall5" unique_id=1619817688]
-position = Vector2(1.8213431, 119.844955)
-scale = Vector2(0.23358208, 2.5075216)
+position = Vector2(1.8213431, 168.67368)
+scale = Vector2(0.23358208, 2.3439412)
 texture = ExtResource("4_xhekj")
 
 [node name="door" type="Node2D" parent="." unique_id=1839758297]
@@ -186,12 +186,12 @@ position = Vector2(124, 100)
 position = Vector2(477, -95)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door/StaticBody2D" unique_id=1882055702]
-position = Vector2(-121, -3)
+position = Vector2(-122, -3)
 shape = SubResource("RectangleShape2D_ydasa")
 
 [node name="Sprite2D" type="Sprite2D" parent="door/StaticBody2D" unique_id=1491969446]
-position = Vector2(-116, -1)
-scale = Vector2(0.6567797, 0.0823389)
+position = Vector2(-118.5, -1)
+scale = Vector2(1.0466104, 0.0823389)
 texture = ExtResource("5_irjyx")
 
 [node name="puzzle1transport" type="Node2D" parent="." unique_id=137919645]
@@ -380,7 +380,7 @@ position = Vector2(938, 104)
 script = SubResource("GDScript_wy464")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="next_level" unique_id=549733317]
-position = Vector2(-456, -157)
+position = Vector2(-458, -157)
 shape = SubResource("RectangleShape2D_jrn08")
 
 [connection signal="pressed" from="puzzle1transport/StaticBody2D/puzzleInteraction" to="puzzle1transport" method="_on_texture_button_pressed"]
