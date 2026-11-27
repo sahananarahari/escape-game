@@ -16,7 +16,8 @@ This program should take the input from a users keyboard and process it to eithe
 ![System Diagram](Flowchart.pdf)
 
 ## future plans
-- [ ] level selector/manager
+- [x] level selector/manager
+- [ ] menu accessible from in game
 - [ ] multiple puzzles per room
 - [ ] multiple levels
 - [ ] inventory
