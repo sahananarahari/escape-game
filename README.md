@@ -48,4 +48,4 @@ This program should take the input from a users keyboard and process it to eithe
 - if you press the buttons in any different order, the puzzle will prompt you to try again and all the lights will disappear
 
 ## demo
-video will go here
+[youtube video](https://www.youtube.com/watch?v=YRIoWAia7Fo)
