@@ -1,3 +1,4 @@
+class_name Level1
 extends Node2D
 
 # creates variables to access different nodes
@@ -8,6 +9,8 @@ extends Node2D
 @onready var light2 = $button2Press
 @onready var light3 = $button3Press
 @onready var light4 = $button4Press
+static var complete: bool = false
+static var level_num: int = 1
 
 const CORRECT_PUZZLE: Array[int] = [1, 3, 4, 2]
 var user_puzzle: Array[int] = []
@@ -50,6 +53,7 @@ func check_puzzle() -> void:
 		door.queue_free()
 		visible = false
 		character.is_frozen = false
+		complete = true
 	else:
 		# reset puzzle array and hides all lights
 		user_puzzle.clear()

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c33kaorksca1j"]
+
+[node name="room_3" type="Node2D" unique_id=1987495112]
+
+[node name="Label" type="Label" parent="." unique_id=1325194198]
+offset_left = 209.0
+offset_top = 280.0
+offset_right = 960.0
+offset_bottom = 367.0
+theme_override_font_sizes/font_size = 28
+text = "ok this is the end of my strange tests have fun at level 3
+youre stuck here now lol"
