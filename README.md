@@ -18,6 +18,7 @@ This program should take the input from a users keyboard and process it to eithe
 ## future plans
 - [x] level selector/manager
 - [ ] menu accessible from in game
+- [ ] main menu
 - [ ] multiple puzzles per room
 - [ ] multiple levels
 - [ ] inventory
@@ -31,9 +32,9 @@ This program should take the input from a users keyboard and process it to eithe
 
 ## how to run
 - make sure you have godot version 4.7.2.0 installed
-- clone repo (i will test and give specific instructions when i am done working on project so i know the full version works NOTE TO SELF MAKE SURE YOU DO THIS)
+- clone repo using git@github.com:sahananarahari/escape-game.git
 - open godot and click import
-- find the folder you just cloned and open the project.godot file
+- find the folder you just cloned (if needed copy it into a location you can access) and open the project.godot file
 
 ## example output
 - you will start as an orange square in a room
