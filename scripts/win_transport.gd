@@ -13,5 +13,6 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
+	# sets level 2 to complete and enters win scene
 	complete = true
 	get_tree().change_scene_to_file("res://scenes/you_win.tscn")

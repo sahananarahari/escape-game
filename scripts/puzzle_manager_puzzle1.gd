@@ -53,6 +53,7 @@ func check_puzzle() -> void:
 		door.queue_free()
 		visible = false
 		character.is_frozen = false
+		# sets level 1 to complete
 		complete = true
 	else:
 		# reset puzzle array and hides all lights
